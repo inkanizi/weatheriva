@@ -1,11 +1,14 @@
+import react from "react";
+
 import "../index.scss"
+import Details from "./Details";
+import Search from "./Search";
 
 const Aside = () => {
   return (
     <div className="Aside">
-        <h1>
-            Govno
-        </h1>
+        <Search/>
+        <Details/>
     </div>
   );
 }
