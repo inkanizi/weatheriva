@@ -4,9 +4,9 @@ const searchLocation = (loc) =>{
     let loc1 = loc
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${loc1}&appid=cd321395ee589685dd2f47d6d2558846`
     let data
-    axios.get(url).then((response)=>{
-        console.log(response.data)
+    axios.get(url).then((response)=>{       
         data = response.data
+        console.log(data);
     })
     return data
 
