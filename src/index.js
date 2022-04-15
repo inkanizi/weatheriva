@@ -12,10 +12,8 @@ const root = createRoot(container);
 
 root.render(
   <App>
-    <Main></Main>
-    <Aside>
-      
-    </Aside>
+    <Main/>
+    <Aside/>
   </App>
 );
 
