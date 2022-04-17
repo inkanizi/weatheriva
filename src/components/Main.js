@@ -1,21 +1,21 @@
 import "../index.scss"
 import Logo from "./Logo";
-import {useState, useEffect, useContext} from "react"
+import { useState, useEffect } from "react"
 import axios from "axios"
-import { LocationContext } from "./Search"
 
-const Main = () => {
+const Main = ({location}) => {
   const [data, setData] = useState({})
-  
-  const location = useContext(LocationContext)
+
+  const getRequest = async () =>{
+    const url = await `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=cd321395ee589685dd2f47d6d2558846`
+    await axios.get(url).then((response)=>{       
+      setData(response.data)
+    })
+  } 
 
   useEffect(()=>{
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=cd321395ee589685dd2f47d6d2558846`
-    axios.get(url).then((response)=>{       
-        console.log(response.data)
-        setData(response.data)
-    })
-}, data)
+    getRequest()
+  }, [location])
 
   let date = new Date()
   return (

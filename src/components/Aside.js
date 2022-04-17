@@ -1,13 +1,12 @@
 import react from "react";
-
 import "../index.scss"
+import SearchLoc from "./containers/SearchLoc";
 import Details from "./Details";
-import Search from "./Search";
 
 const Aside = () => {
   return (
     <div className="Aside">
-        <Search/>
+        <SearchLoc/>
         <Details/>
     </div>
   );

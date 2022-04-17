@@ -53,6 +53,7 @@ code {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    transition: opacity 0.3s ease-in;
   }
   .add-info{
     display: flex;
@@ -88,9 +89,11 @@ code {
   flex-direction: column;
 
   .search-input{
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    width: 550px;
 
     input{
       background: transparent;
@@ -98,7 +101,7 @@ code {
       border: none;
       color: rgb(128, 127, 127);
       border-bottom: 1px solid rgb(128, 127, 127);
-      width: 400px;
+      width: 600px;
       cursor: pointer;
       height: 20px;
       font-size: 20px;
@@ -117,18 +120,13 @@ code {
     }
   
     button{
-      width: 100px;
-      height: 100px;
-      background: rgba(216, 215, 215, 0.5);
+      margin-bottom: 10px;
+      width: 30px;
+      height: 30px;
       outline: none;
       cursor: pointer;
       border: none;
-  
-      &:hover{
-        backdrop-filter: blur(4px);
-        opacity: 0.5;
-        transition: all 100ms ease-in-out;
-      }
+      background: transparent;
     }
   }
  
