@@ -7,5 +7,5 @@ import Search from "../Search";
   })
 
   export default connect(
-      mapDispatchToProps
+    mapDispatchToProps
   )(Search)

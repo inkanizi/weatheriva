@@ -4,14 +4,15 @@ import Main from "../Main";
 
 
 const mapStateToProps = state => ({
-    location: state.location
+    location: state.location,
+    details: state.details
   })
   
-  const mapDispatchToProps = dispatch => ({
-    setLoc: location => dispatch(setLoc(location))
-  })
+const mapDispatchToProps = dispatch => ({
+  setLoc: location => dispatch(setLoc(location))
+})
 
-  export default connect(
-      mapStateToProps,
-      mapDispatchToProps
-  )(Main)
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Main)
