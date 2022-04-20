@@ -1,6 +1,6 @@
 import react from "react"
 
-const Details = () =>{
+const Details = ({details}) =>{
     return(
         <div className="Details">
             <h2>Weather Details</h2>
