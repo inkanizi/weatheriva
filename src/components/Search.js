@@ -12,11 +12,6 @@ const Search = ({dispatch}) =>{
     const onKeyDownHandler = event =>{
         if(event.key === 'Enter'){
             dispatch(setLoc(event.target.value))
-            dispatch(setDetails({
-                param1: "123",
-                param2: "321"
-            }))
-            console.log(getStore)
         }
     }
 

@@ -2,7 +2,7 @@ import "../index.scss"
 import Logo from "./Logo";
 import { useState, useEffect } from "react"
 import axios from "axios"
-import {setLoc} from "../redux/actions"
+import {setDetails, setLoc} from "../redux/actions"
 import { useDispatch, useStore } from "react-redux";
 
 const Main = ({location}) => {
@@ -30,6 +30,12 @@ const Main = ({location}) => {
     const url = await `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=cd321395ee589685dd2f47d6d2558846`
     await axios.get(url).then((response)=>{       
       setData(response.data)
+      console.log(response.data)
+      dispatch(setDetails({
+        humidity: response.data.main ? response.data.main.humidity : null,
+        cloudy: response.data.main ? response.data.clouds.all : null,
+        wind: response.data.main ? response.data.wind.speed : null,
+      }))
     })
   } 
 

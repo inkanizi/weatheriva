@@ -1,4 +1,5 @@
 import react from "react"
+import { useStore } from "react-redux"
 
 const Details = ({details}) =>{
     return(
@@ -7,19 +8,19 @@ const Details = ({details}) =>{
             <div className="details-list">
                 <div className="details-item">
                     <p>Cloudy</p>
-                    <span>86%</span>
+                    <span>{details.cloudy}%</span>
                 </div>
                 <div className="details-item">
                     <p>Humidity</p>
-                    <span>62%</span>
+                    <span>{details.humidity}%</span>
                 </div>
                 <div className="details-item">
                     <p>Wind</p>
-                    <span>8km/h</span>
+                    <span>{details.wind}km/h</span>
                 </div>
                 <div className="details-item">
                     <p>Rain</p>
-                    <span>8mm</span>
+                    <span>{123}mm</span>
                 </div>
             </div>
         </div>
