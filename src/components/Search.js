@@ -1,17 +1,19 @@
 import { useState } from "react"
 import "../index.scss"
-import { setDetails, setLoc } from '../redux/actions' 
-import { useStore } from "react-redux"
+import { setLoc } from '../redux/actions' 
 
 const Search = ({dispatch}) =>{
-    const store = useStore()
-    const getStore = store.getState()
-
-    const [recent, setRecent] = useState([ "London", "Moscow", "New York", "Berlin"])
+    const [recent, setRecent] = useState(["Moscow", "Sochi", "Krasnoarmeysk", "Dubai"])
 
     const onKeyDownHandler = event =>{
         if(event.key === 'Enter'){
             dispatch(setLoc(event.target.value))
+            recent[3] = recent[2]
+            recent[2] = recent[1]
+            recent[1] = recent[0]
+            recent[0] = event.target.value
+
+            event.target.value = " "
         }
     }
 
@@ -22,7 +24,7 @@ const Search = ({dispatch}) =>{
             </div>
             <div className="recent-search">
                 <ul>
-                    <li>{getStore.details.param1}</li>
+                    <li>{recent[0]}</li>
                     <li>{recent[1]}</li>
                     <li>{recent[2]}</li>
                     <li>{recent[3]}</li>

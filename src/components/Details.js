@@ -20,7 +20,7 @@ const Details = ({details}) =>{
                 </div>
                 <div className="details-item">
                     <p>Rain</p>
-                    <span>{123}mm</span>
+                    <span>{details.rain}mm</span>
                 </div>
             </div>
         </div>
