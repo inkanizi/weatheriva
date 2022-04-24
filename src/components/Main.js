@@ -46,16 +46,16 @@ const Main = ({location}) => {
     <div className="Main">
         <Logo></Logo>
         <div className="info">
+          <div className="img-info">
           <h1>{data.main ? `${data.main.temp.toFixed() - 274}°` : null}</h1>
+          <span>{data.weather ? <p>{data.weather[0].main}</p> : null}</span> 
+          </div>
+          
           <div className="add-info">
               <h3>{data.name}</h3>
               <span>{date.toDateString()}</span>
           </div>
-          <div className="img-info">
-          <img src="./img/icn1.png" width={100} height={100}></img>
-            <span>{data.weather ? <p>{data.weather[0].main}</p> : null}</span>
-          </div>
-         
+          
         </div>
     </div>
   );
